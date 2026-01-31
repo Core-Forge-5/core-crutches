@@ -31,7 +31,7 @@ local function RemoveCrutch()
     end
 end
 
-RegisterNetEvent('nh-crutches:client:setInjured', function(enabled)
+RegisterNetEvent('Core-Crutches:client:setInjured', function(enabled)
     local ped = PlayerPedId()
 
     if enabled then
@@ -78,7 +78,7 @@ exports('UseCrutch', function()
 
     RemoveCrutch()
     isInjured = false
-    TriggerServerEvent('nh-crutches:server:useCrutch')
+    TriggerServerEvent('Core-Crutches:server:useCrutch')
 end)
 
 --Enforce limp if someone tries to change walkstyle
@@ -158,7 +158,7 @@ end)
 AddEventHandler('playerSpawned', function()
     Citizen.CreateThread(function()
         Citizen.Wait(1000)
-        TriggerServerEvent('nh-crutches:server:onSpawn')
+        TriggerServerEvent('Core-Crutches:server:onSpawn')
     end)
 end)
 

@@ -20,7 +20,7 @@ local function setCrutched(src, minutes)
     activeCrutches[src] = expires
     Player(src).state.crutchExpires = expires
 
-    TriggerClientEvent('nh-crutches:client:setInjured', src, true)
+    TriggerClientEvent('Core-Crutches:client:setInjured', src, true)
 end
 
 local function clearCrutch(src, notify)
@@ -29,7 +29,7 @@ local function clearCrutch(src, notify)
     local ply = Player(src)
     if ply then
         ply.state.crutchExpires = nil
-        TriggerClientEvent('nh-crutches:client:setInjured', src, false)
+        TriggerClientEvent('Core-Crutches:client:setInjured', src, false)
 
         if notify then
             TriggerClientEvent('ox_lib:notify', src, {
@@ -117,7 +117,7 @@ RegisterCommand('crutchtime', function(source)
     })
 end, false)
 
-RegisterNetEvent('nh-crutches:server:useCrutch', function()
+RegisterNetEvent('Core-Crutches:server:useCrutch', function()
     local src = source
 
     if not activeCrutches[src] then
@@ -168,7 +168,7 @@ AddEventHandler('onResourceStart', function(res)
         
         if expires and expires > os.time() then
             activeCrutches[src] = expires
-            TriggerClientEvent('nh-crutches:client:setInjured', src, true)
+            TriggerClientEvent('Core-Crutches:client:setInjured', src, true)
         end
     end
 end)
@@ -176,14 +176,14 @@ AddEventHandler('playerDropped', function()
     activeCrutches[source] = nil
 end)
 
-RegisterNetEvent('nh-crutches:server:onSpawn', function()
+RegisterNetEvent('Core-Crutches:server:onSpawn', function()
     local src = source
     local ply = Player(src)
     local expires = ply and ply.state.crutchExpires
 
     if expires and expires > os.time() then
         activeCrutches[src] = expires
-        TriggerClientEvent('nh-crutches:client:setInjured', src, true)
+        TriggerClientEvent('Core-Crutches:client:setInjured', src, true)
     else
         if ply then
             ply.state.crutchExpires = nil
