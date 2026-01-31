@@ -11,10 +11,10 @@ This is my first release and I made a crutch system that:
 I thought this was perfect as a money sink or to slow down the flow of instant recovery, and consequence free actions.
 
 
-![Applying](screenshot-showcase/Screenshot 2026-01-23-161235.png)
-![Checking-Crutch-Time](screenshot-showcase/Screenshot 2026-01-23-161236.png)
-![Using-The-Crutch](screenshot-showcase/Screenshot 2026-01-23-161431.png)
-![Using-The-Crutch](screenshot-showcase/Screenshot 2026-01-23-161442.png)
+![Applying](screenshots/Screenshot1.png)
+![Checking-Crutch-Time](screenshots/Screenshot2.png)
+![Using-The-Crutch](screenshots/Screenshot3.png)
+![Using-The-Crutch](screenshots/Screenshot4.png)
 
 This is also availible on my tebex: 
 [https://core-forge.tebex.io/](https://core-forge.tebex.io/package/7240624)
