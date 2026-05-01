@@ -19,3 +19,11 @@ client_scripts {
 server_scripts {
     "server/sv_crutch.lua",
 }
+
+escrow_ignore {
+    'client/',
+    'config/',
+    'install/',
+    'screenshots/',
+    'server/'
+}
